@@ -1,0 +1,99 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    
+    
+  }
+  
+  .container {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  /* main {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+  
+  .problem, .code-editor, .timer-section {
+    flex: 1 1 0px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  #submit-button{
+    /* margin-left: 432px;
+  margin-top: 19px; */
+  display: block;
+  margin: auto;
+}
+  
+  .problem h2 {
+    margin-bottom: 10px;
+  }
+  
+  .code-editor  textarea{
+    opacity: 0;
+    width: 100%;
+    font-family: monospace;
+    padding: 5px;
+    height: 0px;
+    /* resize: vertical; */
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+  }
+  
+  
+  .timer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #timer {
+    font-size: 24px;
+    color: #3f51b5;
+  }
+  
+  #stop-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f00; /* Red for "Stop" button */
+    color: white;
+    cursor: pointer;
+  }
+  
+  #stop-button:hover {
+    background-color: #c00;
+  }
+  
+  #timestamp {
+    text-align: center;
+  }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Challenge</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  <style>
+
+      #editor {
+        width: 99%;
+        height: 400px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: white;
+        margin-left: 5px;
+        /* height: 100%; */
+    overflow-y: hidden;
+      }
+  </style>
+  
+</head>
+<body onload="startTimer()">
+    <header>
+      <h1>Coding Challenge</h1>
+    </header>
+
+  <div class="container">
+    
+      <section class="problem">
+        <h2>Problem</h2>
+        <pre id="problem-text"></pre>
+      </section>
+      <div id="editor"></div>
+      <section class="code-editor">
+        <textarea id="code-area" rows="0"></textarea>
+        <button id="submit-button">Submit</button>
+      </section>
+      <section class="timer-section">
+        <span id="timer">00:00:00</span>
+       
+      </section>
+      
+    </div>
+    <p id="timestamp"></p>
+  <script src="script.js"></script>
+  <script>
+    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.30.0/min/vs' }});
+    require(['vs/editor/editor.main'], function() {
+      var editor = monaco.editor.create(document.getElementById('editor'), {
+        value: "console.log('Hello, World!')",
+        language: 'javascript'
+      });
+    });
+
+    
+  </script>
+</body>
+</html>
