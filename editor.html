@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,54 +9,111 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
   <style>
+    #editor {
+      width: 99%;
+      height: 400px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: white;
+      margin-left: 5px;
+      overflow-y: hidden;
+    }
 
-      #editor {
-        width: 99%;
-        height: 400px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background-color: white;
-        margin-left: 5px;
-        /* height: 100%; */
-    overflow-y: hidden;
-      }
+    /* Custom styling for the submit button */
+    #submit-button {
+      background-color: #4CAF50;
+      /* Green background */
+      border: none;
+      /* No border */
+      color: white;
+      /* White text */
+      padding: 15px 32px;
+      /* Padding */
+      text-align: center;
+      /* Center text */
+      text-decoration: none;
+      /* No underline */
+      display: inline-block;
+      /* Display as inline-block */
+      font-size: 16px;
+      /* Font size */
+      margin-top: 20px;
+      /* Add some margin */
+      cursor: pointer;
+      /* Cursor pointer on hover */
+      border-radius: 5px;
+      /* Rounded corners */
+      transition: background-color 0.3s ease;
+      /* Smooth transition */
+    }
+
+    /* Change background color on hover */
+    #submit-button:hover {
+      background-color: #45a049;
+    }
   </style>
-  
 </head>
-<body onload="startTimer()">
-    <header>
-      <h1>Coding Challenge</h1>
-    </header>
 
+<body onload="startTimer()">
+  <header>
+    <h1>Coding Challenge</h1>
+  </header>
   <div class="container">
-    
-      <section class="problem">
-        <h2>Problem</h2>
-        <pre id="problem-text"></pre>
-      </section>
-      <div id="editor"></div>
-      <section class="code-editor">
-        <textarea id="code-area" rows="0"></textarea>
-        <button id="submit-button">Submit</button>
-      </section>
-      <section class="timer-section">
-        <span id="timer">00:00:00</span>
-       
-      </section>
-      
-    </div>
-    <p id="timestamp"></p>
+    <section class="problem">
+      <h2>Problem</h2>
+      <div id="problem-text">
+        <h3>hello</h3>
+      </div>
+    </section>
+    <div id="editor"></div>
+    <section class="code-editor">
+      <textarea id="code-area" rows="0"></textarea>
+      <!-- Styled submit button -->
+      <a href="winner.html"><button id="submit-button">Submit</button></a>
+    </section>
+    <section class="timer-section">
+      <span id="timer">00:00:00</span>
+    </section>
+  </div>
+  <p id="timestamp"></p>
   <script src="script.js"></script>
   <script>
-    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.30.0/min/vs' }});
-    require(['vs/editor/editor.main'], function() {
+    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.30.0/min/vs' } });
+    require(['vs/editor/editor.main'], function () {
       var editor = monaco.editor.create(document.getElementById('editor'), {
-        value: "console.log('Hello, World!')",
-        language: 'javascript'
+        value: 'c++17\ncout<<"\\hello world\\""',
+        language: 'cpp', // Change language to C++
+        compilerOptions: {
+          "cxxStandard": "c++17" // Set C++ version to 17
+        }
       });
     });
 
-    
+    // Fetch problems from JSON file and display one randomly
+    fetch('final.json')
+      .then(response => response.json())
+      .then(data => {
+        // Get current question index from localStorage or generate a random one
+        let currentQuestionIndex = localStorage.getItem('currentQuestionIndex');
+        if (currentQuestionIndex === null) {
+          currentQuestionIndex = Math.floor(Math.random() * data.length);
+          localStorage.setItem('currentQuestionIndex', currentQuestionIndex);
+        }
+
+        // Populate problem section with the current question
+        var problemText = document.getElementById('problem-text');
+        problemText.innerHTML = `<div><p>${data[currentQuestionIndex].description}</p></div>`;
+      })
+      .catch(error => console.error('Error fetching problems:', error));
+
+    // Handle beforeunload event to change question index before leaving page
+    window.addEventListener('beforeunload', () => {
+      // Generate and store a new random question index
+      const dataLength = 10; // Change this to the total number of questions in your JSON file
+      const newQuestionIndex = Math.floor(Math.random() * dataLength);
+      localStorage.setItem('currentQuestionIndex', newQuestionIndex);
+    });
   </script>
 </body>
+
 </html>

@@ -1,0 +1,88 @@
+[{
+    "id":1,
+    "description": "One hot summer day Pete and his friend Billy decided to buy a watermelon. They chose the biggest and the ripest one, in their opinion. After that the watermelon was weighed, and the scales showed w kilos. They rushed home, dying of thirst, and decided to divide the berry, however they faced a hard problem.\n\nPete and Billy are great fans of even numbers, that's why they want to divide the watermelon in such a way that each of the two parts weighs even number of kilos, at the same time it is not obligatory that the parts are equal. The boys are extremely tired and want to start their meal as soon as possible, that's why you should help them and find out, if they can divide the watermelon in the way they want. For sure, each of them should get a part of positive weight.",
+    "input":"The first (and the only) input line contains integer number w (1≤w≤100) — the weight of the watermelon bought by the boys.",
+    "output":"Print YES, if the boys can divide the watermelon into two parts, each of them weighing even number of kilos; and NO in the opposite case.",
+    "accepted":true
+},
+{
+    "id":2,
+    "description": "Sometimes some words like \"localization\" or \"internationalization\" are so long that writing them many times in one text is quite tiresome. Let's consider a word too long, if its length is strictly more than 10 characters. All too long words should be replaced with a special abbreviation. This abbreviation is made like this: we write down the first and the last letter of a word and between them we write the number of letters between the first and the last letters. That number is in decimal system and doesn't contain any leading zeroes. Thus, \"localization\" will be spelt as \"l10n\", and \"internationalization» will be spelt as \"i18n\". You are suggested to automatize the process of changing the words with abbreviations. At that all too long words should be replaced by the abbreviation and the words that are not too long should not undergo any changes."
+    ,
+    "input":"The first line contains an integer n (1≤n≤100). Each of the following n lines contains one word. All the words consist of lowercase Latin letters and possess the lengths of from 1 to 100 characters.",
+    "output":"Print n lines. The i-th line should contain the result of replacing of the i-th word from the input data.",
+    "accepted":true
+},
+{
+    "id":3,
+    "description": "One day three best friends Petya, Vasya and Tonya decided to form a team and take part in programming contests. Participants are usually offered several problems during programming contests. Long before the start the friends decided that they will implement a problem if at least two of them are sure about the solution. Otherwise, the friends won't write the problem's solution. This contest offers n problems to the participants. For each problem we know, which friend is sure about the solution. Help the friends find the number of problems for which they will write a solution."
+    ,
+    "input":"The first input line contains a single integer n (1≤n≤1000) — the number of problems in the contest. Then n lines contain three integers each, each integer is either 0 or 1. If the first number in the line equals 1, then Petya is sure about the problem's solution, otherwise he isn't sure. The second number shows Vasya's view on the solution, the third number shows Tonya's view. The numbers on the lines are separated by spaces.",
+    "output":"Print a single integer — the number of problems the friends will implement on the contest.",
+    "accepted":true
+},
+{
+    "id":4,
+
+    "description": "The classic programming language of Bitland is Bit++. This language is so peculiar and complicated. The language is that peculiar as it has exactly one variable, called x. Also, there are two operations: Operation ++ increases the value of variable x by 1. Operation -- decreases the value of variable x by 1. A statement in language Bit++ is a sequence, consisting of exactly one operation and one variable x. The statement is written without spaces, that is, it can only contain characters \"+\", \"-\", \"X\". Executing a statement means applying the operation it contains. A programme in Bit++ is a sequence of statements, each of them needs to be executed. Executing a programme means executing all the statements it contains. You're given a programme in language Bit++. The initial value of x is 0. Execute the programme and find its final value (the value of the variable when this programme is executed)."
+
+    ,
+    "input":"The first line contains a single integer n (1≤n≤150) — the number of statements in the programme.\n\nNext n lines contain a statement each. Each statement contains exactly one operation (++ or --) and exactly one variable x (denoted as letter «X»). Thus, there are no empty statements. The operation and the variable can be written in any order.",
+    "output":"Print a single integer — the final value of x.",
+    "accepted":true
+},
+{
+    "id":5,
+
+    "description": "Contestant who earns a score equal to or greater than the k-th place finisher's score will advance to the next round, as long as the contestant earns a positive score... — an excerpt from contest rules. A total of n participants took part in the contest (n≥k), and you already know their scores. Calculate how many participants will advance to the next round."
+    ,
+    "input":"The first line of the input contains two integers n and k (1≤k≤n≤50) separated by a single space.\nThe second line contains n space-separated integers a1,a2,...,an (0≤ai≤100), where ai is the score earned by the participant who got the i-th place. The given sequence is non-increasing (that is, for all i from 1 to n-1 the following condition is fulfilled: ai≥ai+1)."
+    ,
+    "output":"Output the number of participants who advance to the next round.",
+    "accepted":true
+},
+{
+    "id":6,
+
+    "description": "You are given a rectangular board of MxN squares. Also you are given an unlimited number of standard domino pieces of 2x1 squares. You are allowed to rotate the pieces. You are asked to place as many dominoes as possible on the board so as to meet the following conditions:\n\n1. Each domino completely covers two squares.\n\n2. No two dominoes overlap.\n\n3. Each domino lies entirely inside the board. It is allowed to touch the edges of the board.\n\nFind the maximum number of dominoes, which can be placed under these restrictions."
+
+    ,
+    "input":"In a single line you are given two integers M and N — board sizes in squares (1≤M≤N≤16)."
+    ,
+    "output":"Output one number — the maximal number of dominoes, which can be placed.",
+    "accepted":true
+},
+{
+    "id":7,
+
+    "description": "You've got a 5x5 matrix, consisting of 24 zeroes and a single number one. Let's index the matrix rows by numbers from 1 to 5 from top to bottom, let's index the matrix columns by numbers from 1 to 5 from left to right. In one move, you are allowed to apply one of the two following transformations to the matrix:\n\n1. Swap two neighboring matrix rows, that is, rows with indexes i and i+1 for some integer i (1≤i<5).\n2. Swap two neighboring matrix columns, that is, columns with indexes j and j+1 for some integer j (1≤j<5).\n\nYou think that a matrix looks beautiful if the single number one of the matrix is located in its middle (in the cell that is on the intersection of the third row and the third column). Count the minimum number of moves needed to make the matrix beautiful."
+    ,
+    "input":"The input consists of five lines, each line contains five integers: the j-th integer in the i-th line of the input represents the element of the matrix that is located on the intersection of the i-th row and the j-th column. It is guaranteed that the matrix consists of 24 zeroes and a single number one."
+    ,
+    "output":"Print a single integer — the minimum number of moves needed to make the matrix beautiful.",
+    "accepted":true
+},
+{
+    "id":8,
+
+    "description": "Little Petya loves presents. His mum bought him two strings of the same size for his birthday. The strings consist of uppercase and lowercase Latin letters. Now Petya wants to compare those two strings lexicographically. The letters' case does not matter, that is an uppercase letter is considered equivalent to the corresponding lowercase letter. Help Petya perform the comparison."
+    ,
+    "input":"Each of the first two lines contains a bought string. The strings' lengths range from 1 to 100 inclusive. It is guaranteed that the strings are of the same length and also consist of uppercase and lowercase Latin letters."
+    ,
+    "output":"If the first string is less than the second one, print -1. If the second string is less than the first one, print 1. If the strings are equal, print 0. Note that the letters' case is not taken into consideration when the strings are compared.",
+    "accepted":true
+},
+{
+    "id":9,
+
+    "description": "Capitalization is writing a word with its first letter as a capital letter. Your task is to capitalize the given word. Note, that during capitalization all the letters except the first one remains unchanged.\n A single line contains a non-empty word. This word consists of lowercase and uppercase English letters. The length of the word will not exceed 10^3."
+
+
+    ,
+    "input":""
+    ,
+    "output":"Output the given word after capitalization.",
+    "accepted":true
+}
+ 
+]
