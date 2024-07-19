@@ -1,0 +1,12 @@
+{
+  "name": "1v1",
+  "version": "1.0.0",
+  "description": "we are creating a platform that lets 2 ppl perform a 1vl bw themselves on coding questions taken from codeforces",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
